@@ -8,6 +8,6 @@
     color-scheme: dark light ;
 }
 body{
-    background: #000;
+    @apply bg-gray-900;
 }
 

@@ -13,12 +13,18 @@ export class ProductsService extends BaseHttpService {
 
     getProducts(page: number): Observable<product[]> {
 
-        return this.http.get<any[]>(`${this.apiUrl}/products`,
-            {
-                params: {
-                    limit: page * limit
-                }
-            });
+        return this.http.get<any[]>(`${this.apiUrl}/products`,{
+            params: {
+                limit: page * limit
+            }
+        });
     }
+
+    getProduct(id: string):  Observable<product> {
+        return this.http.get<any>(`${this.apiUrl}/products/${id}`);
+    }
+
+
+
 }
 
